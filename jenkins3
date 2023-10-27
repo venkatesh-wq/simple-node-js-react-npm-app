@@ -1,0 +1,18 @@
+Pipeline{
+        agent{
+               docker {
+                    image ‘node:6-alpine’
+                    Args’-p 3000:3000’
+        }
+       }
+     Environent {
+            CI = ‘ture’
+      }
+        Stages{
+              Stage(‘Build’) {
+                    Steps {
+                           sh ‘npm install’ 
+
+                     }
+              }
+}
